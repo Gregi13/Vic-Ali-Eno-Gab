@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="92141808-0b0b-4ad1-9b07-2455d2d3da5f" name="Default Changelist" comment="" />
+    <list default="true" id="92141808-0b0b-4ad1-9b07-2455d2d3da5f" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Vic-Ali-Eno-Gab/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Vic-Ali-Eno-Gab/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Script/PlayerBehaviour.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Script/PlayerBehaviour.cs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -57,7 +60,7 @@
       <option name="presentableId" value="Default" />
       <updated>1591717324509</updated>
       <workItem from="1591717334992" duration="608000" />
-      <workItem from="1592570103192" duration="2109000" />
+      <workItem from="1592570103192" duration="3946000" />
     </task>
     <servers />
   </component>

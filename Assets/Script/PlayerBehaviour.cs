@@ -7,7 +7,7 @@ public class PlayerBehaviour : MonoBehaviour
 {
     [SerializeField] private float speed;
     [SerializeField] private float maxSpeed;
-    [SerializeField] private float jumpForce;
+    [SerializeField] private float jumpForce; // permets de modifier la vitesse de saut et de déplacement dans l'inspector
     
     
     private Inputs inputs;
@@ -18,14 +18,14 @@ public class PlayerBehaviour : MonoBehaviour
     {
         inputs = new Inputs();
         inputs.Enable();
-        inputs.Player.Move.performed += OnMovePerformed;
-        inputs.Player.Move.canceled += OnMoveCanceled;
-        inputs.Player.Jump.performed += OnJumpperformed;
+        inputs.Player.Move.performed += OnMovePerformed;  // lorsque l'on appuie sur le bouton "Move", le personnage bouge
+        inputs.Player.Move.canceled += OnMoveCanceled;    // Lorsque l'on n'appuie plus sur le bouton "Move", le joueur arrete de bouger
+        inputs.Player.Jump.performed += OnJumpPerformed;  // va chercher l'input "Jump" afin de permettre au joueur de sauter
     }
 
-    private void OnJumpperformed(InputAction.CallbackContext obj)
+    private void OnJumpPerformed(InputAction.CallbackContext obj)
     {
-        myRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+        myRB.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse); // permets de donner un coup sec au saut 
     }
     
     
@@ -40,7 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
         direction = obj.ReadValue<Vector2>();
     }
 
-    void Start()
+    private void Start()
     {
         myRB = GetComponent<Rigidbody2D>();
     }
@@ -49,9 +49,8 @@ public class PlayerBehaviour : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        var myRigidBody = GetComponent<Rigidbody2D>();
         direction.y = 0;
-        if (myRigidBody.velocity.sqrMagnitude < maxSpeed)
-            myRigidBody.AddForce(direction * speed);
+        if (myRB.velocity.sqrMagnitude < maxSpeed)
+            myRB.AddForce(direction * speed);
     }
 }
